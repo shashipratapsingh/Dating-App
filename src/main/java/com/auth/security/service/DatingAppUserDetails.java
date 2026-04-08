@@ -10,12 +10,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BhavanaCorpUserDetails implements UserDetails {
+public class DatingAppUserDetails implements UserDetails {
     private String userName;
     private String password;
     private List<GrantedAuthority> roles;
 
-    public BhavanaCorpUserDetails(Users users){
+    public DatingAppUserDetails(Users users){
         this.userName = users.getEmail();
         this.password = users.getPassword();
         this.roles = Arrays.stream(users.getRoles().name().split(",")).map(role-> new SimpleGrantedAuthority("ROLES_"+role)).collect(Collectors.toList());

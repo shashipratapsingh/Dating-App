@@ -1,7 +1,7 @@
 package com.auth.security.JWT;
 
 import com.auth.security.service.AuthService;
-import com.auth.security.service.BhavnaCopsUserService;
+import com.auth.security.service.DatingAppUserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private AuthService authService;
 
     @Autowired
-    private BhavnaCopsUserService service;
+    private DatingAppUserService service;
 
 
     @Override

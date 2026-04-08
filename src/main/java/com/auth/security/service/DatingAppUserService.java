@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class BhavnaCopsUserService implements UserDetailsService {
+public class DatingAppUserService implements UserDetailsService {
 
     @Autowired
     private UsersRepository usersRepository;
@@ -19,6 +19,6 @@ public class BhavnaCopsUserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<Users> users = usersRepository.findByEmail(username);
-        return users.map(BhavanaCorpUserDetails::new).orElseThrow(() -> new UsernameNotFoundException("user not found for email :" + username));
+        return users.map(DatingAppUserDetails::new).orElseThrow(() -> new UsernameNotFoundException("user not found for email :" + username));
     }
 }
