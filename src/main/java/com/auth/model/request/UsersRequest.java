@@ -26,7 +26,7 @@ public class UsersRequest {
     private String password;
 
     @NotNull(message = "roles can not be null")
-    private Roles roles=Roles.PRODUCER;
+    private Roles roles=Roles.USER;
 
     public @NotNull(message = "name can not be null") String getName() {
         return name;
